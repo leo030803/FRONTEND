@@ -13,6 +13,7 @@ function signUpEagle() {
      const email = document.querySelector("#email").value
      const age = document.querySelector("#age").value
      const nickname = document.querySelector("#nickname").value
+     const password = document.querySelector("#password").value
 
      if (name === "" || email === "" || age === "" || nickname === "") {
 
@@ -25,10 +26,13 @@ function signUpEagle() {
         name,
         email,
         age,
-        nickname
+        nickname,
+        password
      }
 
      console.log(user)
 
      // enviar o user para o backend
+
+     fetch("http://localhost:3333/cadastrar")
 }
