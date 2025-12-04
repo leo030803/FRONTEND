@@ -50,5 +50,5 @@ button.onclick = (event) => {
 
    alert(message)
 
-   window.location.href = "../index.html"
+   window.location.href = "../../index.html"
 }

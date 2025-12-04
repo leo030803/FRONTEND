@@ -42,11 +42,27 @@ button.onclick = (event) => {
 
  } ).then(response => response.json())
 
-  console.log(response)
+  // se existir response.message significa que o usuário errou algo. Por isso mostramos a mensagem na tela
 
-  // const { message } = response
+  if (response.message) {
 
-  // alert(message)
+      alert(response.message)
+      
+      // recarrega a página
+      
+      window.location.reload()
+      return
+  }
 
-  // window.location.href = "../index.html"
+   // desestruturar id e name de response
+
+   const { id, name} = response
+
+   // guardar a informação no sessionStorage convertida em JSON
+
+   sessionStorage.setItem("user", JSON.stringify({ id, name}))
+
+   alert("Login realizado com sucesso!")
+
+   window.location.href = "../../index.html"
 }
