@@ -3,19 +3,17 @@ button.onclick = (event) => {
     
     event.preventDefault()
    
-    signUpEagle()
+    login()
 }
 
 
- async function signUpEagle() {
+ async function login() {
 
-     const name = document.querySelector("#name").value
+     
      const email = document.querySelector("#email").value
-     const age = document.querySelector("#age").value
-     const nickname = document.querySelector("#nickname").value
      const password = document.querySelector("#password").value
 
-     if (name === "" || email === "" || age === "" || nickname === "") {
+     if (email === "" || password === "") {
 
         alert("Preencha todas as informações!")
         return
@@ -23,18 +21,16 @@ button.onclick = (event) => {
 
      const user = {
 
-        name,
+        
         email,
-        age,
-        nickname,
         password
      }
 
-     console.log(user)
+     
 
      // enviar o user para o backend
 
-     const response = await fetch("http://localhost:3333/cadastrar", {
+     const response = await fetch("http://localhost:3333/login", {
 
       method: "POST",
       headers: {
@@ -46,9 +42,11 @@ button.onclick = (event) => {
 
  } ).then(response => response.json())
 
-   const { message } = response
+  console.log(response)
 
-   alert(message)
+  // const { message } = response
 
-   window.location.href = "../index.html"
+  // alert(message)
+
+  // window.location.href = "../index.html"
 }

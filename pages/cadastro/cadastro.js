@@ -15,7 +15,7 @@ button.onclick = (event) => {
      const nickname = document.querySelector("#nickname").value
      const password = document.querySelector("#password").value
 
-     if (name === "" || email === "" || age === "" || nickname === "") {
+     if (name === "" || email === "" || age === "" || nickname === "" || password === "") {
 
         alert("Preencha todas as informações!")
         return
@@ -30,7 +30,7 @@ button.onclick = (event) => {
         password
      }
 
-     console.log(user)
+     
 
      // enviar o user para o backend
 
