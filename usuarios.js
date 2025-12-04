@@ -1,8 +1,8 @@
 async function receiveData() {
 
-   const persons = await fetch("http://localhost:3333").then(response => response.json())
+   const users = await fetch("http://localhost:3333").then(response => response.json())
 
-   persons.map(person => {
+   users.map(person => {
 
      document.querySelector("main").innerHTML += `
      
@@ -22,3 +22,5 @@ async function receiveData() {
 
    })
 }
+
+receiveData()
